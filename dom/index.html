@@ -1,13 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>DOM Basics</title>
-</head>
-<body>
-    <div class="bg-black">
-        <h1 class="heading">Learn DOM</h1>
-        <p>Lorem ipsum dolor sit amet.</p>
+    <style>
+      .bg-black {
+        background-color: #212121;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body class="bg-black">
+    <div>
+      <h1 id="title" class="heading">Learn DOM <span style="display: none;"> Basics </span></h1>
+      <p>Lorem ipsum dolor sit amet.</p>
+      <ul>
+        <li class="list-item">One</li>
+        <li class="list-item">Two</li>
+        <li class="list-item">Three</li>
+        <li class="list-item">Four</li>
+        <li class="list-item">Five</li>
+      </ul>
     </div>
-</body>
+    <script>
+        const title = document.getElementById('title')
+        console.log(title.innerText); // Learn DOM - what is visible on screen
+        console.log(title.textContent); // Learn DOM  Basics - whats actually inside 
+        console.log(title.innerHTML); // Learn DOM <span style="display: none;"> Basics </span>
+
+        const items = document.getElementsByClassName('list-item')
+        const itemArr = Array.from(items) // cannot use loops on items
+        console.log(itemArr); // (5) [li.list-item, li.list-item, li.list-item, li.list-item, li.list-item]
+    </script>
+  </body>
 </html>
